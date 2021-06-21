@@ -29,6 +29,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import utils.EMF_Creator;
+import utils.SetupTestUsers;
 
 @Path("book")
 public class BookResource {
@@ -90,6 +91,15 @@ public class BookResource {
           
       }
 
+          @GET
+    @Path("populate")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String populate() {
+        SetupTestUsers s = new SetupTestUsers();
+        s.populate();
+        return "Success";
+    }
       
       }
    

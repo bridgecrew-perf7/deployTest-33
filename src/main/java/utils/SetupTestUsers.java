@@ -9,8 +9,11 @@ import javax.persistence.EntityManagerFactory;
 
 public class SetupTestUsers {
 
-  public static void main(String[] args) {
+        public void populate(){
 
+      
+
+       
     EntityManagerFactory emf = EMF_Creator.createEntityManagerFactory();
     EntityManager em = emf.createEntityManager();
 
@@ -35,5 +38,7 @@ public class SetupTestUsers {
     em.persist(both);
     em.getTransaction().commit();
   }
-
 }
+     
+
+
